@@ -30,7 +30,7 @@
               if($page=="beranda"){
                 echo '<h1 class="m-0 text-dark judul-konten">Beranda</h1>';
               }else{
-                echo '<h1 class="m-0 text-dark judul-konten"></h1>';
+                echo '<h1 class="m-0 text-dark judul-konten">'.$title.'</h1>';
               }
             ?>
             
@@ -210,7 +210,14 @@
         
       });
     });
-
+    // brg by kategori
+    $(document).ready(function(){
+      $(document).on('click','#src_kat',function(e){
+        e.preventDefault();
+        var kat = $('#s_kat').val();
+        window.location.href = '<?= base_url() ?>admin/brg_bykat/'+kat+'';
+      });
+    });
   }
   // Anggota
   else if(page=="semua-anggota"){
@@ -280,6 +287,27 @@
     $("#anggota").attr('class', 'nav-link active');
     $("#bungkus-agt").attr('class', 'nav-item has-treeview menu-open');
     $("#peng-akn").attr('class','nav-link active');
+    //
+    $(document).ready(function(){
+      $(document).on('click','.reset',function(e){
+        e.preventDefault();
+        var id = $(this).attr('data-id');
+        swal.fire({
+          title: 'Yakin?',
+          text: "Apakah Reset Akun ini?",
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Ya'
+        }).then((result) => {
+          if (result.value) {
+            window.location.href = '<?= base_url() ?>admin/reset_pass/'+id+'';
+          }
+        });
+        
+      });
+    });
   } 
   // pinjam
   else if(page=="pinjam"){

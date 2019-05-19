@@ -12,9 +12,12 @@ class M_admin extends CI_Model
         $this->db->where('id',$id);
         return $this->db->update($table,$data);
     }
+    function brg_kat($kat){
+        return $this->db->get_where('barang',array('kategori'=>$kat))->result();
+    }
     function p_akun(){
         return $this->db->query('
-            SELECT akn.nip, agt.nama, agt.bidang, akn.level, akn.status 
+            SELECT akn.id, akn.nip, agt.nama, agt.bidang, akn.level, akn.status 
             FROM akun akn JOIN anggota agt ON akn.nip=agt.nip
         ');
     }

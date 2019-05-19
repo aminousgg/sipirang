@@ -1,11 +1,12 @@
 <?php
+  var_dump($this->session->flashdata('success'));
   if($this->session->flashdata('error')):
       $link="<script src='".base_url()."swal/sweetalert2.all.min.js'></script>";
       echo $link;
       echo '<script>
               swal({
                   type: "'.'error'.'",
-                  title: "'.'Gagal Menambahkan'.'",
+                  title: "'.'Gagal Reset'.'",
                   text: "'.$this->session->flashdata('error').'",
                   timer: 10000,
                   customClass: "'.'animated bounceIn'.'",
@@ -18,7 +19,7 @@
       echo '<script>
               swal({
                   type: "'.'success'.'",
-                  title: "'.'Berhasil'.'",
+                  title: "'.'Berhasil Reset'.'",
                   text: "'.$this->session->flashdata('success').'",
                   customClass: "'.'animated bounceIn'.'",
                   })
@@ -77,7 +78,7 @@
                          }
                          ?></td>
                         <td>
-                          <button class="btn btn-warning btn-sm">Ubah Pass</button>
+                          <button data-id="<?= $row->id ?>" class="reset btn btn-danger btn-sm">Reset Pass</button>
                         </td>
                     </tr>
                   <?php } ?>

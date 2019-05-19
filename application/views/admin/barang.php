@@ -30,10 +30,33 @@
         <div class="card">
             <div class="card-header">
               <div class="row">
-                <div class="col-md-2">
-                    <h3 class="card-title">Data Barang</h3>
+                <div class="col-md-6">
+
+                <form>
+                  <div class="form-row">
+                    <div class="col-6 my-1">
+                      <label class="sr-only" for="inlineFormInputGroupUsername">Kategori</label>
+                      <div class="input-group">
+                        <select id="s_kat" class="form-control">
+                          <option hidden >Kategori</option>
+                          <option value="">All</option>
+                          <?php
+                            $kat=$this->db->get('kategori')->result();
+                            foreach($kat as $u){
+                              echo '<option value="'.$u->id.'">'.$u->kat.'</option>';
+                            }
+                          ?>
+                        </select>
+                        <div id="src_kat" style="cursor:pointer;" class="input-group-prepend">
+                          <div class="input-group-text"><i class="fa fa-search"></i></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+
                 </div>
-                <div class="col-md-8"></div>
+                <div class="col-md-4"></div>
                 <div class="col-md-2">
                     <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#tambah">
                       <i class="fa fa-plus"></i> Barang

@@ -1,11 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 // http://www.ijns.org/journal/index.php/ijns/article/view/154
+
 class Admin extends CI_Controller {
     function __construct(){
 		parent::__construct();
         $this->load->helper(array('form', 'url'));
-		$this->load->model('M_admin');
+        $this->load->model('M_admin');
+        $this->load->library('encryption');
 		
     }
     function islogin(){
@@ -79,7 +81,21 @@ class Admin extends CI_Controller {
             redirect('admin/login');
         }
         $data['page']="barang";
+        $data['title']="Barang";
         $data['table']=$this->M_admin->display_tabel('barang');
+        $this->load->view('admin/utama',$data);
+    }
+    function brg_bykat($kat=null){
+        if( ! $this->islogin() ){
+            $this->session->set_flashdata('user',current_url());
+            redirect('admin/login');
+        }
+        if($kat==null){
+            redirect('admin/barang');
+        }
+        $data['page']="barang";
+        $data['title']="Barang";
+        $data['table']=$this->M_admin->brg_kat($kat);
         $this->load->view('admin/utama',$data);
     }
     function get_brg($id){
@@ -183,6 +199,7 @@ class Admin extends CI_Controller {
             redirect('admin/login');
         }
         $data['page']="semua-anggota";
+        $data['title']="Semua Anggota";
         $data['table']=$this->M_admin->display_tabel('anggota');
         $this->load->view('admin/utama',$data);
     }
@@ -337,6 +354,7 @@ class Admin extends CI_Controller {
             redirect('admin/login');
         }
         $data['page']="pinjam";
+        $data['title']="Peminjaman";
         $this->load->view('admin/utama',$data);
     }
     function kode_pjm(){
@@ -406,6 +424,7 @@ class Admin extends CI_Controller {
             redirect('admin/login');
         }
         $data['page']="kembali";
+        $data['title']="Pengembalian";
         $this->load->view('admin/utama',$data);
     }
     function in_kembali($id){
@@ -466,7 +485,28 @@ class Admin extends CI_Controller {
             redirect('admin/login');
         }
         $data['page']="record";
+        $data['title']="Rcord";
         $data['table']=$this->M_admin->display_tabel('record');
         $this->load->view('admin/utama',$data);
+    }
+    //==================================
+    function reset_pass($id){
+        if( ! $this->islogin() ){
+            $this->session->set_flashdata('user',current_url());
+            redirect('admin/login');
+        }
+        $up=array(
+            'pass' => '12345',
+            'status' => 0,
+        );
+        $this->db->where('id',$id);
+        $res=$this->db->update('akun',$up);
+        if($res==true){
+            $this->session->set_flashdata('success', 'Berhasil reset password');
+            redirect(base_url('admin/daftar_akun'));
+        }else{
+            $this->session->set_flashdata('error', 'Gagal mengubah gambar');
+            redirect(base_url('admin/daftar_akun'));
+        }
     }
 }
