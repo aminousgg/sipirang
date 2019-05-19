@@ -1,5 +1,5 @@
 <?php
-  var_dump($this->session->flashdata('success'));
+  //var_dump($this->session->flashdata('success'));
   if($this->session->flashdata('error')):
       $link="<script src='".base_url()."swal/sweetalert2.all.min.js'></script>";
       echo $link;
@@ -46,7 +46,7 @@
                 <tr>
                   <th>NIP</th>
                   <th>Nama</th>
-                  <th>Bidang</th>
+                  <th>Password</th>
                   <th>Level</th>
                   <th>Status</th>
                   <th>Aksi</th>
@@ -62,7 +62,7 @@
                     <tr>
                         <td><?= $row->nip ?></td>
                         <td><?= $row->nama ?></td>
-                        <td><?= $row->bidang ?></td>
+                        <td><?= $row->pass ?></td>
                         <td><?php
                          if($row->level==1){
                              echo 'Petugas';
@@ -84,14 +84,7 @@
                   <?php } ?>
                 </tbody>
                 <tfoot>
-                <tr>
-                  <th>NIP</th>
-                  <th>Nama</th>
-                  <th>Bidang</th>
-                  <th>Level</th>
-                  <th>Status</th>
-                  <th>Aksi</th>
-                </tr>
+                
                 </tfoot>
               </table>
             </div>

@@ -17,7 +17,7 @@ class M_admin extends CI_Model
     }
     function p_akun(){
         return $this->db->query('
-            SELECT akn.id, akn.nip, agt.nama, agt.bidang, akn.level, akn.status 
+            SELECT akn.id, akn.nip, akn.pass, agt.nama, agt.bidang, akn.level, akn.status 
             FROM akun akn JOIN anggota agt ON akn.nip=agt.nip
         ');
     }

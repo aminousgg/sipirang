@@ -344,6 +344,7 @@ class Admin extends CI_Controller {
             redirect('admin/login');
         }
         $data['page']="peng-anggota";
+        $data['title']="Pengaturan Akun";
         $data['table']=$this->M_admin->p_akun()->result();
         $this->load->view('admin/utama',$data);
     }
@@ -485,7 +486,7 @@ class Admin extends CI_Controller {
             redirect('admin/login');
         }
         $data['page']="record";
-        $data['title']="Rcord";
+        $data['title']="Aktifitas Pinjam dan kembali";
         $data['table']=$this->M_admin->display_tabel('record');
         $this->load->view('admin/utama',$data);
     }
