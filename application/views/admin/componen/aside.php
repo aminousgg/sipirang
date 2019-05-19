@@ -44,29 +44,40 @@
               </p>
             </a>
           </li>
-          <li id="bungkus-agt" class="nav-item has-treeview">
-            <a href="#" id="anggota" class="nav-link">
-              <i class="nav-icon fa fa-user"></i>
-              <p>
-                Anggota
-                <i class="right fa fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="ml-2 nav nav-treeview">
-              <li class="nav-item">
-                <a id="semua-agt" href="<?= base_url() ?>admin/anggota" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Semua Anggota</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a id="peng-akn" href="<?= base_url() ?>admin/daftar_akun" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Akun Terdaftar</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+          <?php if($level=='admin'){ ?>
+            <li id="bungkus-agt" class="nav-item has-treeview">
+              <a href="#" id="anggota" class="nav-link">
+                <i class="nav-icon fa fa-user"></i>
+                <p>
+                  Anggota
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="ml-2 nav nav-treeview">
+                <li class="nav-item">
+                  <a id="semua-agt" href="<?= base_url() ?>admin/anggota" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Semua Anggota</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a id="peng-akn" href="<?= base_url() ?>admin/daftar_akun" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Akun Terdaftar</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          <?php }elseif($level=='petugas'){ ?>
+            <li id="bungkus-agt" class="nav-item">
+              <a href="<?= base_url() ?>admin/anggota" id="anggota" class="nav-link">
+                <i class="nav-icon fa fa-user"></i>
+                <p>
+                  Anggota
+                </p>
+              </a>
+            </li>
+          <?php } ?>
           <li class="nav-item">
             <a href="<?= base_url() ?>admin/pinjam" id="pinjam" class="nav-link">
               <i class="nav-icon fa fa-exchange"></i>

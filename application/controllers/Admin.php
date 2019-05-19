@@ -497,7 +497,7 @@ class Admin extends CI_Controller {
             redirect('admin/login');
         }
         $up=array(
-            'pass' => '12345',
+            'pass' => md5('12345'),
             'status' => 0,
         );
         $this->db->where('id',$id);
