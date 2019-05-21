@@ -30,4 +30,11 @@ class M_admin extends CI_Model
             FROM barang b JOIN kategori k ON b.kategori=k.id
         ');
     }
+    function record(){
+        return $this->db->query('
+            SELECT r.kd_pjm, a.nama, b.nm_brg, r.tgl_pjm, r.estimasi, r.status
+            FROM record r JOIN anggota a ON r.nip=a.nip
+            JOIN barang b ON r.kd_brg=b.kd_brg
+        ');
+    }
 }

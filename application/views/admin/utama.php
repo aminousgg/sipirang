@@ -33,7 +33,6 @@
                 echo '<h1 class="m-0 text-dark judul-konten">'.$title.'</h1>';
               }
             ?>
-            
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

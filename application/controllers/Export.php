@@ -11,6 +11,7 @@ class Export extends CI_Controller {
     function pdf($table){
         require_once('./assets/html2pdf/html2pdf.class.php');
         $pdf = new HTML2PDF('P','A4','en', true, 'UTF-8', array(15, 10, 15, 10));
+        // 
         if($table=="brg"){
             $data['table']=$this->M_admin->brg()->result();
             ob_start();
@@ -21,6 +22,30 @@ class Export extends CI_Controller {
             $pdf->WriteHTML($html);
             ob_end_clean();
             $pdf->Output("DataBarang.pdf", 'I');
+        }
+        // ANGGOTA
+        elseif($table=="agt"){
+            $data['table']=$this->M_admin->display_tabel('anggota');
+            ob_start();
+            $this->load->view('admin/pdf/pdf_anggota',$data);
+            $html = ob_get_contents();
+            // var_dump($html); die;
+            $pdf->setDefaultFont('times');
+            $pdf->WriteHTML($html);
+            ob_end_clean();
+            $pdf->Output("Data Anggota.pdf", 'I');
+        }
+        // RECORD
+        elseif($table=="record"){
+            $data['table']=$this->M_admin->record()->result();
+            ob_start();
+            $this->load->view('admin/pdf/pdf_record',$data);
+            $html = ob_get_contents();
+            // var_dump($html); die;
+            $pdf->setDefaultFont('times');
+            $pdf->WriteHTML($html);
+            ob_end_clean();
+            $pdf->Output("Data Anggota.pdf", 'I');
         }
     }
     // function cek(){

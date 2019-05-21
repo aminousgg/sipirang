@@ -27,6 +27,16 @@
 ?>
 <div class="row">
     <div class="col-md-12">
+      <a href="<?= base_url() ?>export/pdf/record" class="btn btn-danger btn-sm mb-1">
+        <i class="fa fa-file-text-o"></i> Pdf
+      </a>
+      <a href="#" class="btn btn-success btn-sm mb-1">
+        <i class="fa fa-file-text-o"></i> Exel
+      </a>
+      <a href="#" class="btn btn-info btn-sm mb-1">
+        <i class="fa fa-print"></i> Cetak
+      </a>
+      <!--  -->
         <div class="card">
             <div class="card-header">
               <div class="row">
