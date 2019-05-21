@@ -38,7 +38,7 @@
                       <label class="sr-only" for="inlineFormInputGroupUsername">Kategori</label>
                       <div class="input-group">
                         <select id="s_kat" class="form-control">
-                          <option hidden >Kategori</option>
+                          <option hidden value="k" >Kategori</option>
                           <option value="">All</option>
                           <?php
                             $kat=$this->db->get('kategori')->result();
@@ -61,9 +61,9 @@
                     <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#tambah">
                       <i class="fa fa-plus"></i> Barang
                     </button>
-                    <!-- <a href="<?= base_url() ?>Export/barang_pdf">
-                      pdf
-                    </a> -->
+                    <a href="<?= base_url() ?>export/pdf/brg" class="btn btn-info print">
+                      print
+                    </a>
                 </div>
               </div>
                 

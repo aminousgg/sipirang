@@ -21,4 +21,13 @@ class M_admin extends CI_Model
             FROM akun akn JOIN anggota agt ON akn.nip=agt.nip
         ');
     }
+    function agt_dis($level){
+
+    }
+    function brg(){
+        return $this->db->query('
+            SELECT b.kd_brg, b.nm_brg, k.kat, b.merk, b.status
+            FROM barang b JOIN kategori k ON b.kategori=k.id
+        ');
+    }
 }

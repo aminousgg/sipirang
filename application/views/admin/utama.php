@@ -215,9 +215,23 @@
       $(document).on('click','#src_kat',function(e){
         e.preventDefault();
         var kat = $('#s_kat').val();
-        window.location.href = '<?= base_url() ?>admin/brg_bykat/'+kat+'';
+        if(kat=='k'){
+          // nothing
+        }else{
+          window.location.href = '<?= base_url() ?>admin/brg_bykat/'+kat+'';
+        }
+        
       });
     });
+    // 
+    function print(){
+      var divToPrint=document.getElementById("example2");
+      newWin= window.open("");
+      newWin.document.write(divToPrint.outerHTML);
+      newWin.print();
+      newWin.close();
+    }
+
   }
   // Anggota
   else if(page=="semua-anggota"){
