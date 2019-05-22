@@ -48,8 +48,24 @@ class Export extends CI_Controller {
             $pdf->Output("Data Anggota.pdf", 'I');
         }
     }
-    // function cek(){
-    //     //var_dump($this->M_admin->brg()->result());
-    // }
+    function exel($table){
+        //var_dump($this->M_admin->brg()->result());
+        if($table=="brg"){
+            $data['table']=$this->M_admin->brg()->result();
+            $this->load->view('admin/exel/ex_barang',$data);
+        }
+        elseif($table=="agt"){
+            $data['table']=$this->M_admin->display_tabel('anggota');
+            $this->load->view('admin/exel/ex_agt',$data);
+        }
+        elseif($table=="record"){
+            $data['table']=$this->M_admin->record()->result();
+            $this->load->view('admin/exel/ex_record',$data);
+        }
+        
+    }
+    function cetak($table){
+
+    }
     
 }

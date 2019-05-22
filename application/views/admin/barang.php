@@ -30,7 +30,7 @@
       <a href="<?= base_url() ?>export/pdf/brg" class="btn btn-danger btn-sm mb-1">
         <i class="fa fa-file-text-o"></i> Pdf
       </a>
-      <a href="#" class="btn btn-success btn-sm mb-1">
+      <a href="<?= base_url() ?>export/exel/brg" class="btn btn-success btn-sm mb-1">
         <i class="fa fa-file-text-o"></i> Exel
       </a>
       <a href="#" class="btn btn-info btn-sm mb-1">
