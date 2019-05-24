@@ -33,7 +33,7 @@
       <a href="<?= base_url() ?>export/exel/agt" class="btn btn-success btn-sm mb-1">
         <i class="fa fa-file-text-o"></i> Exel
       </a>
-      <a href="#" class="btn btn-info btn-sm mb-1">
+      <a href="<?= base_url() ?>export/cetak/agt" target="_blank" class="btn btn-info btn-sm mb-1">
         <i class="fa fa-print"></i> Cetak
       </a>
         <div class="card">
@@ -44,9 +44,9 @@
                 </div>
                 <div class="col-md-8"></div>
                 <div class="col-md-2">
-                    <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#tambah">
-                      <i class="fa fa-plus"></i> Anggota
-                    </button>
+                  <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#tambah">
+                    <i class="fa fa-plus"></i> Anggota
+                  </button>
                 </div>
               </div>
                 

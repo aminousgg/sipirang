@@ -65,8 +65,17 @@ class Export extends CI_Controller {
         
     }
     function cetak($table){
-        if($table="brg"){
-            $this->load->view('admin/print/print_form');
+        if($table=="brg"){
+            $data['table']=$this->M_admin->brg()->result();
+            $this->load->view('admin/print/print-brg',$data);
+        }
+        elseif($table=="agt"){
+            $data['table']=$this->M_admin->display_tabel('anggota');
+            $this->load->view('admin/print/print-agt',$data);
+        }
+        elseif($table=="record"){
+            $data['table']=$this->M_admin->record()->result();
+            $this->load->view('admin/print/print-record',$data);
         }
     }
     function bukti_cetak($kode){

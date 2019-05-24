@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Print</title>
+	<title> Sipirang | Print</title>
 </head>
 <style>
 @page {
@@ -9,7 +9,6 @@
     margin-top: 45px;
     margin-bottom: 50px;
 }
-
 </style>
 <body onload="window.close();">
    <table style="min-width: 100%">
@@ -154,7 +153,6 @@
 
    <script>
      window.print();
-     
    </script>
 </body>
 </html>

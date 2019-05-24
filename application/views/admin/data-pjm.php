@@ -19,8 +19,12 @@
               swal({
                   type: "'.'success'.'",
                   title: "'.'Berhasil'.'",
-                  text: "'.$this->session->flashdata('success').'",
+                  text: "'.'Cetak Bukti Peminjaman'.'",
                   customClass: "'.'animated bounceIn'.'",
+                  }).then((result) => {
+                    if (result.value) {
+                      window.open("'.base_url().'export/bukti_cetak/'.$this->session->flashdata('success').'");
+                    }
                   })
             </script>';
   endif;

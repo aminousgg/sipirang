@@ -423,8 +423,8 @@ class Admin extends CI_Controller {
                 }
             }
             if($cek==count($brg)){
-                $this->session->set_flashdata('success', 'Berhasil Meminjam');
-			    redirect(base_url('admin/record'));
+                $this->session->set_flashdata('success', $ang[0]."-".$ang[1]);
+			    redirect(base_url('admin/daftar_pinjam'));
             }
         }
     }
