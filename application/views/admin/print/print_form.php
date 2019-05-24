@@ -82,7 +82,7 @@
    </table>
    <!--  -->
 
-   <table style="min-width: 90%; margin: auto;" cellspacing="0" border="1">
+   <table style="min-width: 95%; margin: auto;" cellspacing="0" border="1">
    	<tr>
    	  <th style="min-width: 5%;">
    	  	No
@@ -90,13 +90,13 @@
    	  <th style="min-width: 15%;">
    	  	Kode Barang
    	  </th>
-   	  <th style="min-width: 35%;">
+   	  <th style="min-width: 40%;">
    	  	Nama Barang
    	  </th>
    	  <th style="min-width: 10%;">
    	  	Merk
    	  </th>
-   	  <th style="min-width: 15%;">
+   	  <th style="min-width: 25%;">
    	  	Kategori
    	  </th>
    	</tr>
@@ -128,7 +128,7 @@
    		<td style="min-width: 80%; text-align: center;">
    			
    		</td>
-   		<td style="min-width: 10%; text-align: right; padding-right: 70px;">
+   		<td style="min-width: 10%; text-align: right; padding-right: 60px;">
    			Petugas
    		</td>
    	</tr>
@@ -144,7 +144,7 @@
    		<td style="min-width: 80%; text-align: center;">
    			
    		</td>
-   		<td style="min-width: 10%; text-align: right; padding-right: 50px;">
+   		<td style="min-width: 10%; text-align: right; padding-right: 55px;">
    			<?= $this->session->userdata('session')['nama'] ?>
    		</td>
 		 </tr>
