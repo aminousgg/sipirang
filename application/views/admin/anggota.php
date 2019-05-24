@@ -246,11 +246,10 @@
                           </div>
                           <div class="col">
                             <label style="color:green;">Level User</label>
-                            <select name="level" id="level" class="form-control" required>
-                              <option hidden value="">Pilih Level</option>
+                            <select name="level" id="level" class="form-control">
                               <option value="2">Admin</option>
                               <option value="1">Petugas</option>
-                              <option value="0">Level</option>
+                              <option value="0">user</option>
                             </select>
                           </div>
                         </div>

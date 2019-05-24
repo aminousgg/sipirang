@@ -81,8 +81,12 @@
               $data['table']=$table;
               $this->load->view('admin/record',$data);
             }
-            elseif($page=="pinjam"){
+            elseif($page=="pjm-brg"){
               $this->load->view('admin/pinjam');
+            }
+            elseif($page=="dft-pjm"){
+              $data['table']=$table;
+              $this->load->view('admin/data-pjm',$data);
             }
             elseif($page=="kembali"){
               $this->load->view('admin/kembali');
@@ -323,8 +327,10 @@
     });
   } 
   // pinjam
-  else if(page=="pinjam"){
+  else if(page=="pjm-brg"){
     $("#pinjam").attr('class', 'nav-link active');
+    $("#bungkus-pjm").attr('class', 'nav-item has-treeview menu-open');
+    $("#pjm-brg").attr('class','nav-link active');
     var count = 0;
     var barang = new Array();
     $(document).ready(function(){
@@ -469,7 +475,11 @@
     });
 
   }
-
+  else if(page=="dft-pjm"){
+    $("#pinjam").attr('class', 'nav-link active');
+    $("#bungkus-pjm").attr('class', 'nav-item has-treeview menu-open');
+    $("#dft-pjm").attr('class','nav-link active');
+  } 
   // kembali
   else if(page=="kembali"){
     $("#kembali").attr('class', 'nav-link active');
@@ -584,6 +594,17 @@
   // record
   else if(page=="record"){
     $("#record").attr('class', 'nav-link active');
+    $(document).ready(function(){
+      $(document).on('click','.cari_kat',function(e){
+        e.preventDefault();
+        var kat=$("#pilih_cari").val();
+        if(kat==""){
+
+        }else{
+          window.location.href='<?= base_url() ?>admin/record_kat/'+kat;
+        }
+      });
+    });
   }
 
   // =============== Set DataTables ==========
@@ -664,6 +685,7 @@
           }
         });
   }
+
   
 </script>
 

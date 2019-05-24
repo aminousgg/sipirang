@@ -354,8 +354,18 @@ class Admin extends CI_Controller {
             $this->session->set_flashdata('user',current_url());
             redirect('admin/login');
         }
-        $data['page']="pinjam";
+        $data['page']="pjm-brg";
         $data['title']="Peminjaman";
+        $this->load->view('admin/utama',$data);
+    }
+    function daftar_pinjam(){
+        if( ! $this->islogin() ){
+            $this->session->set_flashdata('user',current_url());
+            redirect('admin/login');
+        }
+        $data['page']="dft-pjm";
+        $data['title']="Peminjaman";
+        $data['table']=$this->db->get_where('record',array('status'=>0))->result();
         $this->load->view('admin/utama',$data);
     }
     function kode_pjm(){
@@ -490,6 +500,23 @@ class Admin extends CI_Controller {
         $data['table']=$this->M_admin->display_tabel('record');
         $this->load->view('admin/utama',$data);
     }
+    function record_kat($kat){
+        if( ! $this->islogin() ){
+            $this->session->set_flashdata('user',current_url());
+            redirect('admin/login');
+        }
+        $data['page']="record";
+        $data['title']="Aktifitas Pinjam dan kembali";
+        if($kat=="pjm"){
+            $data['table']=$this->db->get_where('record',array('status'=>0))->result();
+        }elseif($kat=="kmbl"){
+            $data['table']=$this->db->get_where('record',array('status'=>1))->result();
+        }elseif($kat=="all"){
+            redirect(base_url('admin/record'));
+        }
+        
+        $this->load->view('admin/utama',$data);
+    }
     //==================================
     function reset_pass($id){
         if( ! $this->islogin() ){
@@ -510,4 +537,5 @@ class Admin extends CI_Controller {
             redirect(base_url('admin/daftar_akun'));
         }
     }
+    
 }

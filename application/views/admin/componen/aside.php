@@ -78,13 +78,28 @@
               </a>
             </li>
           <?php } ?>
-          <li class="nav-item">
-            <a href="<?= base_url() ?>admin/pinjam" id="pinjam" class="nav-link">
+          <li id="bungkus-pjm" class="nav-item has-treeview">
+            <a href="#" id="pinjam" class="nav-link">
               <i class="nav-icon fa fa-exchange"></i>
               <p>
                 Pinjam
+                <i class="right fa fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a id="pjm-brg" href="<?= base_url() ?>admin/pinjam" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Pinjam Barang</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a id="dft-pjm" href="<?= base_url() ?>admin/daftar_pinjam" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Daftar Pinjam</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a href="<?= base_url() ?>admin/kembali" id="kembali" class="nav-link">

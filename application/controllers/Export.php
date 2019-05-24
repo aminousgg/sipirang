@@ -65,7 +65,14 @@ class Export extends CI_Controller {
         
     }
     function cetak($table){
-
+        if($table="brg"){
+            $this->load->view('admin/print/print_form');
+        }
+    }
+    function bukti_cetak($kode){
+        $data['table']=$this->M_admin->bukti_pjm($kode)->result();
+        $data['form']=$this->M_admin->form_pjm($kode)->row_array();
+        $this->load->view('admin/print/print_form',$data);
     }
     
 }

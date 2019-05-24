@@ -21,8 +21,8 @@ class M_admin extends CI_Model
             FROM akun akn JOIN anggota agt ON akn.nip=agt.nip
         ');
     }
-    function agt_dis($level){
-
+    function agt_ptgs(){
+        
     }
     function brg(){
         return $this->db->query('
@@ -35,6 +35,23 @@ class M_admin extends CI_Model
             SELECT r.kd_pjm, a.nama, b.nm_brg, r.tgl_pjm, r.estimasi, r.status
             FROM record r JOIN anggota a ON r.nip=a.nip
             JOIN barang b ON r.kd_brg=b.kd_brg
+        ');
+    }
+    function bukti_pjm($kode){
+        $kode = (string)$kode;
+        return $this->db->query('
+            SELECT r.kd_pjm, b.nm_brg, b.merk, b.kategori
+            FROM record r JOIN anggota a ON r.nip=a.nip
+            JOIN barang b ON r.kd_brg=b.kd_brg
+            WHERE r.status=0 AND r.kd_pjm="'.(string)$kode.'"
+        ');
+    }
+    function form_pjm($kode){
+        return $this->db->query('
+            SELECT r.kd_pjm, r.nip, a.nama, b.nm_brg, r.tgl_pjm, r.estimasi, r.status
+            FROM record r JOIN anggota a ON r.nip=a.nip
+            JOIN barang b ON r.kd_brg=b.kd_brg
+            WHERE r.kd_pjm="'.(string)$kode.'"
         ');
     }
 }
