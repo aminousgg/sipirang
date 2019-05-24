@@ -439,7 +439,7 @@ class Admin extends CI_Controller {
         $this->load->view('admin/utama',$data);
     }
     function in_kembali($id){
-        $this->db->select('kd_brg');
+        $this->db->select('kd_brg, kd_pjm');
         $record=$this->db->get_where('record',array('id'=>$id))->row_array();
         // set brg
         date_default_timezone_set('Asia/Jakarta');
@@ -462,7 +462,8 @@ class Admin extends CI_Controller {
         $cek=$this->db->update('record',$data_up);
         if($cek){
             $this->session->set_flashdata('success', 'Berhasil Mengembalikan');
-			redirect(base_url('admin/record'));
+            $this->session->set_flashdata('input', $record['kd_pjm']);
+			redirect(base_url('admin/kembali'));
         }
     }
     function get_record($in=null){

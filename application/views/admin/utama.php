@@ -528,6 +528,7 @@
         $("#bidang").val("");
         $("#bidang1").val("");
         $("#kode_pjm").val("");
+        $("#isi-res").html("");
       });
     });
     // cari
@@ -550,7 +551,7 @@
             for(var i in data){
               $("#isi-res").append(`
               <tr>
-                <td>`+(Number(no)+1)+`</td>
+                <td>`+(Number(i)+1)+`</td>
                 <td>`+nama+`</td>
                 <td id="nm_brg_`+i+`">`+nm_brg(data[i].kd_brg, i)+`</td>
                 <td>`+data[i].tgl_pjm+`</td>

@@ -1,3 +1,30 @@
+<?php
+  if($this->session->flashdata('error')):
+      $link="<script src='".base_url()."swal/sweetalert2.all.min.js'></script>";
+      echo $link;
+      echo '<script>
+              swal({
+                  type: "'.'error'.'",
+                  title: "'.'Gagal Menambahkan'.'",
+                  text: "'.$this->session->flashdata('error').'",
+                  timer: 10000,
+                  customClass: "'.'animated bounceIn'.'",
+                  })
+            </script>';
+  endif;
+  if($this->session->flashdata('success')):
+      $link="<script src='".base_url()."swal/sweetalert2.all.min.js'></script>";
+      echo $link;
+      echo '<script>
+              swal({
+                  type: "'.'success'.'",
+                  title: "'.'Berhasil'.'",
+                  text: "'.$this->session->flashdata('success').'",
+                  customClass: "'.'animated bounceIn'.'",
+                  })
+            </script>';
+  endif;
+?>
 <div class="row">
     <div class="col-md-6">
         <div class="card card-info">
