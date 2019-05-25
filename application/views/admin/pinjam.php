@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-10">
         <div class="card card-info">
             <div class="card-header">
                 <h3 class="card-title">Form Pinjam</h3>
@@ -21,27 +21,24 @@
                       <?php }?>
                     </datalist>
                   </div>
-                </div>
-                <div class="row mt-2">
-                  <div class="col">
-                     <label>Kode Pinjam</label>
-                     <input type="text" id="kode_pjm" class="form-control" disabled>
-                     <input type="hidden" name="kd_pjm" id="kd_pjm">
-                  </div>
-                </div>
-                <div class="row mt-2">
                   <div class="col">
                     <label>NIP</label>
                     <input type="text" value="" class="form-control" id="nip" disabled>
                     <input type="hidden" name="nip" id="nip1">
                   </div>
                   <div class="col">
+                     <label>Kode Pinjam</label>
+                     <input type="text" id="kode_pjm" class="form-control" disabled>
+                     <input type="hidden" name="kd_pjm" id="kd_pjm">
+                  </div>
+                </div>
+                
+                <div class="row mt-2">
+                  <div class="col">
                     <label>Bidang</label>
                     <input type="text" class="form-control" id="bidang" disabled>
                     <input type="hidden" name="bidang" id="bidang1">
                   </div>
-                </div>
-                <div class="row mt-2">
                   <div class="col">
                     <?php date_default_timezone_set('Asia/Jakarta'); ?>
                     <label>Tanggal Pinjam</label>
@@ -66,7 +63,9 @@
             
         </div>
     </div>
-    <div class="col-md-6">
+</div>
+<div class="row">
+    <div class="col-md-12">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Daftar Pinjam</h3>
@@ -90,9 +89,7 @@
                   </tr>
                 </tbody>
               </table>
-              
             </div>
-            
         </div>
     </div>
 </div>

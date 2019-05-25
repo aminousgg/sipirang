@@ -82,6 +82,7 @@ class Admin extends CI_Controller {
         }
         $data['page']="barang";
         $data['title']="Barang";
+        $this->db->order_by("status", "desc");
         $data['table']=$this->M_admin->display_tabel('barang');
         $this->load->view('admin/utama',$data);
     }

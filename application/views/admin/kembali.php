@@ -25,8 +25,8 @@
             </script>';
   endif;
 ?>
-<div class="row">
-    <div class="col-md-6">
+<div class="row mt-0">
+    <div class="col-md-10">
         <div class="card card-info">
             <div class="card-header">
                 <h3 class="card-title">Form cari</h3>
@@ -48,14 +48,13 @@
                       <?php }?>
                      </datalist>
                   </div>
-                </div>
-                <div class="row mt-2">
                   <div class="col">
                     <label>Nama Peminjam</label>
                     <input type="text" class="form-control" id="nama" autocomplete="off" disabled>
                     <input type="hidden" nama="nama1" id="nama1">
                   </div>
                 </div>
+
                 <div class="row mt-2">
                   <div class="col">
                     <label>NIP</label>
@@ -78,7 +77,10 @@
             
         </div>
     </div>
-    <div class="col-md-6">
+</div>
+<!--  -->
+<div class="row mt-0">
+  <div class="col-md-12">
     <div class="card" id="data-res">
       <div class="card-header">
           <h3 class="card-title">Data result</h3>
@@ -100,9 +102,5 @@
       
     </div>
   </div>
-</div>
-<!--  -->
-<div class="row">
-  
 </div>
 <!-- modal -->
