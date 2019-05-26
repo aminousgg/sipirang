@@ -41,7 +41,7 @@
                       $angg=$this->db->get_where('record',array('status'=>0))->result();
                     ?>
                      <label>Kode Pinjam</label>
-                     <input type="text" placeholder="Masukan Kode Pinjam" id="kode_pjm" list="browsers" class="form-control" autocomplete="off" required>
+                     <input type="text" placeholder="Masukan Kode Pinjam" autofocus id="kode_pjm" list="browsers" class="form-control" autocomplete="off" required>
                      <datalist id="browsers">
                       <?php foreach($angg as $u){?>
                         <option value="<?php echo $u->kd_pjm ?>">
@@ -91,6 +91,8 @@
             <th style="width:10px;">No</th>
             <th>Nama Peminjam</th>
             <th>Barang</th>
+            <th>Merk</th>
+            <th>Kategori</th>
             <th>Tgl Pinjam</th>
             <th>Aksi</th>
           </tr>

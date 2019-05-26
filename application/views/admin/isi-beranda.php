@@ -4,7 +4,9 @@
               <span class="info-box-icon bg-info elevation-1"><i class="fa fa-briefcase"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Barang</span>
+                <span class="info-box-text">
+                  <a href="<?= base_url() ?>admin/barang">Barang</a> 
+                </span>
                 <span class="info-box-number">
                   <?= $num['brg'] ?>
                 </span>
@@ -19,7 +21,9 @@
               <span class="info-box-icon bg-danger elevation-1"><i class="fa fa-users"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Anggota</span>
+                <span class="info-box-text">
+                  <a href="<?= base_url() ?>admin/anggota">Anggota</a>
+                </span>
                 <?= $num['agt'] ?>
               </div>
               <!-- /.info-box-content -->
@@ -36,7 +40,9 @@
               <span class="info-box-icon bg-success elevation-1"><i class="fa fa fa-exchange"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Peminjam</span>
+                <span class="info-box-text">
+                  <a href="<?= base_url() ?>admin/daftar_pinjam">Peminjam</a>
+                </span>
                 <?= $num['pjm'] ?>
               </div>
               <!-- /.info-box-content -->
@@ -49,7 +55,9 @@
               <span class="info-box-icon bg-warning elevation-1"><i class="fa fa-repeat"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Kembali</span>
+                <span class="info-box-text">
+                  <a href="<?= base_url() ?>admin/kembali">Kembali</a>
+                </span>
                 <?= $num['kmbl'] ?>
               </div>
               <!-- /.info-box-content -->

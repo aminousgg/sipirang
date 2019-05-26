@@ -160,7 +160,7 @@
                           </div>
                           <div class="col">
                             <label>Nama Barang</label>
-                            <input name="nm_brg" placeholder="Nama Barang" type="text" class="form-control">
+                            <input name="nm_brg" placeholder="Nama Barang" autofocus type="text" class="form-control">
                           </div>
                         </div>
                       </div>

@@ -470,7 +470,20 @@
         var tgl = new Array(2);
         tgl[0]=$("#tgl_pjm").val();
         tgl[1]=$("#esti").val();
-        window.location.href = "<?= base_url() ?>admin/in_pinjam/"+barang.join("-")+"/"+angg.join("-")+"/"+tgl.join(" ")+"";
+        swal.fire({
+          title: 'Sudah Yakin',
+          text: "Pastikan Barang yang anda pilih sudah benar",
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Ya'
+        }).then((result) => {
+          if (result.value) {
+            window.location.href = "<?= base_url() ?>admin/in_pinjam/"+barang.join("-")+"/"+angg.join("-")+"/"+tgl.join(" ")+"";
+          }
+        });
+        
       });
     });
 
@@ -553,7 +566,9 @@
               <tr>
                 <td>`+(Number(i)+1)+`</td>
                 <td>`+nama+`</td>
-                <td id="nm_brg_`+i+`">`+nm_brg(data[i].kd_brg, i)+`</td>
+                <td>`+data[i].nm_brg+`</td>
+                <td>`+data[i].merk+`</td>
+                <td>`+data[i].kategori+`</td>
                 <td>`+data[i].tgl_pjm+`</td>
                 <td>
                   <button type="button" data-id="`+data[i].id+`" class="kmbl-kan btn btn-danger btn-sm">
@@ -573,7 +588,20 @@
       $(document).on('click','.kmbl-kan',function(e){
         e.preventDefault();
         var id=$(this).attr('data-id');
-        window.location.href='<?= base_url() ?>/admin/in_kembali/'+id+'';
+        swal.fire({
+          title: 'Sudah Yakin',
+          text: "Apakah barang ini akan dikembalikan?",
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Ya'
+        }).then((result) => {
+          if (result.value) {
+            window.location.href='<?= base_url() ?>/admin/in_kembali/'+id+'';
+          }
+        });
+        
       });
     });
     //

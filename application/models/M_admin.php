@@ -54,4 +54,12 @@ class M_admin extends CI_Model
             WHERE r.kd_pjm="'.(string)$kode.'"
         ');
     }
+    function ajax_rec($kode){
+        return $this->db->query('
+            SELECT a.nama, b.nm_brg, r.tgl_pjm, b.merk, b.kategori
+            FROM record r JOIN anggota a ON r.nip=a.nip
+            JOIN barang b ON r.kd_brg=b.kd_brg
+            WHERE r.kd_pjm="'.(string)$kode.'"
+        ');
+    }
 }

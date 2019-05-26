@@ -121,7 +121,7 @@
                       <div class="row">
                         <div class="col">
                             <label>NIP</label>
-                            <input name="nip" placeholder="NIP" type="text" class="form-control" required>
+                            <input name="nip" placeholder="NIP" type="text" class="form-control" autofocus required>
                           </div>
                           <div class="col">
                             <label>Nama</label>

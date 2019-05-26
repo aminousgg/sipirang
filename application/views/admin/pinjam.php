@@ -14,7 +14,7 @@
                         $angg=$this->db->get('anggota')->result();
                     ?>
                     <label>Nama Peminjam</label>
-                    <input type="text" class="form-control" list="browsers" id="nama" autocomplete="off" required placeholder="Masukan Nama peminjam">
+                    <input type="text" class="form-control" list="browsers" id="nama" autofocus autocomplete="off" required placeholder="Masukan Nama peminjam">
                     <datalist id="browsers">
                       <?php foreach($angg as $u){?>
                         <option value="<?php echo $u->nama ?>">

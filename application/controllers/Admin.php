@@ -481,8 +481,8 @@ class Admin extends CI_Controller {
             );
             echo json_encode($hasil);
         }else{
-           $rec=$this->db->get_where('record',array('kd_pjm'=>$kd,'status'=>0))->result();
-           echo json_encode($rec);
+            $hasil=$this->M_admin->ajax_rec($kd)->result();
+            echo json_encode($hasil);
         }
         
     }
