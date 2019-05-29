@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sipirang | Data Record</title>
+	<title>Sipirang | Data Peminjam</title>
 </head>
 <style>
 @page {
@@ -12,7 +12,7 @@
 </style>
 <body onload="window.close();">
 
-<h2 style="text-align: center; margin-bottom: 5px;">Data Record</h2>
+<h2 style="text-align: center; margin-bottom: 5px;">Data Kembali</h2>
 <h3 style="text-align: center; margin-top: -2px">Dinas Energi Sumber Daya Mineral</h3>
 
 <table style="width: 100%; border-collapse: collapse;">	
@@ -25,6 +25,7 @@
     <th style="border:solid 1px; width: 15%; height:20px; text-align:center;">Status</th>
   </tr>
   <?php foreach($table as $row){ ?>
+    <?php if($row->status==1){ ?>
 	<tr>
 	  <td style="border:solid 1px;"><?= $row->kd_pjm ?></td>
 	  <td style="border:solid 1px;"><?= $row->nama ?></td>
@@ -39,6 +40,7 @@
         }
       ?>
 	</tr>
+    <?php } ?>
   <?php } ?>
 </table>
 <script>

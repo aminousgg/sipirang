@@ -48,7 +48,6 @@
                   <th>Nama</th>
                   <th>Password</th>
                   <th>Level</th>
-                  <th>Status</th>
                   <th>Aksi</th>
                 </tr>
                 </thead>
@@ -68,13 +67,6 @@
                              echo 'Petugas';
                          }else{
                              echo 'Admin';
-                         }
-                         ?></td>
-                        <td><?php
-                         if($row->status==1){
-                            echo '<span class="badge badge-success">Aktif</span>';
-                         }else{
-                            echo '<span class="badge badge-secondary">Belum aktif</span>';
                          }
                          ?></td>
                         <td>

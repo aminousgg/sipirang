@@ -121,7 +121,7 @@
                       <div class="row">
                         <div class="col">
                             <label>NIP</label>
-                            <input name="nip" placeholder="NIP" type="text" class="form-control" autofocus required>
+                            <input name="nip" placeholder="NIP" autocomplete="off" type="text" class="form-control" autofocus required>
                           </div>
                           <div class="col">
                             <label>Nama</label>
@@ -159,6 +159,9 @@
                             <label>Bidang</label>
                             <input type="text" name="bid" class="form-control" placeholder="Bidang" required>
                           </div>
+                          <?php if($this->session->userdata('session')['level']=="petugas"){
+                            echo "<input type='hidden' name='level' value='0'>";
+                            } else { ?>
                           <div class="col">
                             <label style="color:green;">Level User</label>
                             <select name="level" class="form-control" required>
@@ -168,6 +171,7 @@
                               <option value="0">Biasa</option>
                             </select>
                           </div>
+                            <?php } ?>
                           <div class="col">
                             <label>Gambar</label><br>
                             <input type="file" name="file" id="file" required>
@@ -245,12 +249,15 @@
                             <input type="text" id="bid" name="bid" class="form-control" placeholder="Bidang" required>
                           </div>
                           <div class="col">
+                            <?php if($this->session->userdata('session')['level']=="petugas"){
+                            } else { ?>
                             <label style="color:green;">Level User</label>
                             <select name="level" id="level" class="form-control">
                               <option value="2">Admin</option>
                               <option value="1">Petugas</option>
                               <option value="0">user</option>
                             </select>
+                            <?php } ?>
                           </div>
                         </div>
                       </div>

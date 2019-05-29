@@ -36,10 +36,10 @@
       </a>
       <a href="<?= base_url() ?>export/exel/record" class="btn btn-success btn-sm mb-1">
         <i class="fa fa-file-text-o"></i> Exel
+      </a>-->
+      <a href="<?= base_url() ?>export/cetak/pjm" target="_blank" class="btn btn-info btn-sm mb-1">
+        <i class="fa fa-print"></i> Cetak pinjam
       </a>
-      <a href="#" class="btn btn-info btn-sm mb-1">
-        <i class="fa fa-print"></i> Cetak
-      </a> -->
       <!--  -->
         <div class="card">
             <div class="card-header">

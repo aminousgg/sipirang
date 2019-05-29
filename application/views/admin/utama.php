@@ -548,6 +548,7 @@
     $(document).ready(function(){
       $(document).on('click','.cari',function(e){
         e.preventDefault();
+        $("#isi-res").html("");
         var kode=$("#kode_pjm").val();
         var data_post = new FormData();
         data_post.append('kode',kode);
@@ -563,7 +564,7 @@
             var nama = $("#nama1").val();
             for(var i in data){
               $("#isi-res").append(`
-              <tr>
+              <tr id="bar_`+data[i].id+`">
                 <td>`+(Number(i)+1)+`</td>
                 <td>`+nama+`</td>
                 <td>`+data[i].nm_brg+`</td>
@@ -588,6 +589,7 @@
       $(document).on('click','.kmbl-kan',function(e){
         e.preventDefault();
         var id=$(this).attr('data-id');
+        console.log(id);
         swal.fire({
           title: 'Sudah Yakin',
           text: "Apakah barang ini akan dikembalikan?",
@@ -598,12 +600,33 @@
           confirmButtonText: 'Ya'
         }).then((result) => {
           if (result.value) {
-            window.location.href='<?= base_url() ?>/admin/in_kembali/'+id+'';
+            // window.location.href='<?= base_url() ?>/admin/in_kembali/'+id+'';
+            in_kembali(id);
           }
         });
         
       });
     });
+    function in_kembali(id){
+      $.ajax({
+            type : "POST",
+            url  : '<?= base_url() ?>/admin/in_kembali/'+id+'',
+            data : {id: "1"},
+            success: function(data){
+                var json = data,
+                obj = JSON.parse(json);
+                console.log(obj);
+                if(obj.cek==1){
+                  $("#bar_"+id).html("");
+                  Swal.fire(
+                    'Berhasil!',
+                    'Pengembalian berhasil',
+                    'success'
+                  );
+                }
+              }
+            });
+    }
     //
     function nm_brg(kode, i){
       var hasil;

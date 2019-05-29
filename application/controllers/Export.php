@@ -77,6 +77,14 @@ class Export extends CI_Controller {
             $data['table']=$this->M_admin->record()->result();
             $this->load->view('admin/print/print-record',$data);
         }
+        elseif($table=="pjm"){
+            $data['table']=$this->M_admin->record()->result();
+            $this->load->view('admin/print/print-pjm',$data);
+        }
+        elseif($table=="kmbl"){
+            $data['table']=$this->M_admin->record()->result();
+            $this->load->view('admin/print/print-kmbl',$data);
+        }
     }
     function bukti_cetak($kode){
         $data['table']=$this->M_admin->bukti_pjm($kode)->result();

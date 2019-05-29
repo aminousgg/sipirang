@@ -443,6 +443,7 @@ class Admin extends CI_Controller {
         $this->db->select('kd_brg, kd_pjm');
         $record=$this->db->get_where('record',array('id'=>$id))->row_array();
         // set brg
+        // var_dump($record); die;
         date_default_timezone_set('Asia/Jakarta');
         $set=array(
             'status' => 1,
@@ -462,9 +463,11 @@ class Admin extends CI_Controller {
         $this->db->where('id',$id);
         $cek=$this->db->update('record',$data_up);
         if($cek){
-            $this->session->set_flashdata('success', 'Berhasil Mengembalikan');
-            $this->session->set_flashdata('input', $record['kd_pjm']);
-			redirect(base_url('admin/kembali'));
+            $hsl['cek']="1";
+            echo json_encode($hsl);
+        }else{
+            $hsl['cek']="0";
+            echo json_encode($hsl);
         }
     }
     function get_record($in=null){

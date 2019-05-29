@@ -25,7 +25,10 @@
             </script>';
   endif;
 ?>
-<div class="row mt-0">
+<a href="<?= base_url() ?>export/cetak/kmbl" target="_blank" class="btn btn-info btn-sm mb-1">
+  <i class="fa fa-print"></i> Cetak kembali
+</a>
+<div class="row mt-1">
     <div class="col-md-10">
         <div class="card card-info">
             <div class="card-header">

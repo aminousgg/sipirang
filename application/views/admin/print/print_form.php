@@ -115,7 +115,7 @@
 				echo $kat;
 				?></td>
 			</tr>
-		 <?php } ?>
+		 <?php $i++; } ?>
    	</tr>
    </table>
    <!--  -->
